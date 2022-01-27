@@ -20,7 +20,7 @@ spec:
   ingressClassName: {{ .Values.ingress.ingressClassName | quote }}
   {{- end }}
   rules:
-    {{- if not .Values.ingress.hostname }}
+    {{- if eq .Values.ingress.hostname "domain-from-values.yaml.com" }}
     - host: {{ .Values.ingress.hostname | quote }}
       http:
         paths:
