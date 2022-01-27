@@ -87,5 +87,5 @@ spec:
     {{- if .Values.ingress.extraTls }}
     {{- include "common.tplvalues.render" (dict "value" .Values.ingress.extraTls "context" $) | nindent 4 }}
     {{- end }}
-  {{- end }}
+##  {{- end }}
 {{- end }}
