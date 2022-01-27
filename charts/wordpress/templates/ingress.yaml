@@ -57,10 +57,14 @@ spec:
     {{- end }}
   {{- if or (and .Values.ingress.tls (or (include "wordpress.ingress.certManagerRequest" .Values.ingress.annotations) .Values.ingress.selfSigned)) .Values.ingress.extraTls }}
   tls:
-    {{- if and .Values.ingress.tls (or (include "wordpress.ingress.certManagerRequest" .Values.ingress.annotations) .Values.ingress.selfSigned) }}
+    {{- if and .Values.ingress.tls (or (include "wordpress.ingress.certManagerRequest" .Values.ingress.annotations) .Values.ingress.selfSigned) .Values.ingress.hostname "change-me.com") }}
     - hosts:
         - {{ .Values.ingress.hostname2 | quote }}
       secretName: {{ printf "%s-tls" .Values.ingress.hostname2 }}
+    {{ else }}
+    - hosts:
+        - {{ $.Release.Name }}-{{ $.Release.Namespace | quote }}
+      secretName: {{ printf "%s-tls" $.Release.Name }}-{{ $.Release.Namespace }} 
     {{- end }}
     {{- if .Values.ingress.extraTls }}
     {{- include "common.tplvalues.render" (dict "value" .Values.ingress.extraTls "context" $) | nindent 4 }}
