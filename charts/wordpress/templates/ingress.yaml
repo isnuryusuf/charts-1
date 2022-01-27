@@ -20,8 +20,8 @@ spec:
   ingressClassName: {{ .Values.ingress.ingressClassName | quote }}
   {{- end }}
   rules:
-    {{- if .Values.ingress.hostname }}
-    - host: '{{ $.Release.Name }}-{{ $.Release.Namespace }}.apps.k8s.arch.biznetgio.xyz'
+    {{- if eq .Values.ingress.hostname "change-me.com" }}
+    - host: test.com
       http:
         paths:
           {{- if .Values.ingress.extraPaths }}
@@ -33,7 +33,7 @@ spec:
             {{- end }}
             backend: {{- include "common.ingress.backend" (dict "serviceName" (include "common.names.fullname" .) "servicePort" "http" "context" $)  | nindent 14 }}
     {{ else }}
-    - host: test.com	
+    - host: '{{ $.Release.Name }}-{{ $.Release.Namespace }}.apps.k8s.arch.biznetgio.xyz'
     {{- end }}
     {{- range .Values.ingress.extraHosts }}
     - host: {{ .name | quote }}
