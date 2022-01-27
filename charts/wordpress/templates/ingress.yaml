@@ -21,7 +21,7 @@ spec:
   {{- end }}
   rules:
     {{- if eq .Values.ingress.hostname "change-me.com" }}
-    - host: test.com
+    - host: {{ .Values.ingress.hostname2 | quote }}
       http:
         paths:
           {{- if .Values.ingress.extraPaths }}
