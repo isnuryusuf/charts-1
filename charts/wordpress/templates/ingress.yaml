@@ -60,7 +60,7 @@ spec:
     {{- if and .Values.ingress.tls (or (include "wordpress.ingress.certManagerRequest" .Values.ingress.annotations) .Values.ingress.selfSigned) .Values.ingress.hostname2 "change-me.com" }}
     - hosts:
         - '{{ $.Release.Name }}-{{ $.Release.Namespace }}.apps.k8s.arch.biznetgio.xyz'
-      secretName: {{ printf "%s-tls" $.Release.Name-$.Release.Namespace }}
+      secretName: {{ printf "%s-tls" $.Release.Name }}
     {{ else }}
     - hosts:
         - {{ .Values.ingress.hostname2 | quote }}
