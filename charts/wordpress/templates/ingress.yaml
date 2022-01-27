@@ -33,7 +33,7 @@ spec:
             {{- end }}
             backend: {{- include "common.ingress.backend" (dict "serviceName" (include "common.names.fullname" .) "servicePort" "http" "context" $)  | nindent 14 }}
 ##    {{- end }}
-    {{ else }} 
+    {{ else if .Values.ingress.hostname2 }} 
     - host: {{ .Values.ingress.hostname2 | quote }}
       http:
         paths:
@@ -56,7 +56,6 @@ spec:
             {{- end }}
             backend: {{- include "common.ingress.backend" (dict "serviceName" (include "common.names.fullname" $) "servicePort" "http" "context" $) | nindent 14 }}
     {{- end }}
-{{- end }}
   {{- if or (and .Values.ingress.tls (or (include "wordpress.ingress.certManagerRequest" .Values.ingress.annotations) .Values.ingress.selfSigned)) .Values.ingress.extraTls }}
   tls:
     {{- if and .Values.ingress.tls (or (include "wordpress.ingress.certManagerRequest" .Values.ingress.annotations) .Values.ingress.selfSigned) }}
