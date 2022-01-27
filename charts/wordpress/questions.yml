@@ -12,7 +12,7 @@ questions:
   group: "Services and Load Balancing"
   subquestions:
   ##- variable: ingress.hosts[0].name
-  - variable: ingress.hostname
+  - variable: ingress.hostname2
     default: "domain-from.question.yaml"
     description: "Hostname to your WordPress installation"
     type: hostname

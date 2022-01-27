@@ -21,7 +21,7 @@ spec:
   {{- end }}
   rules:
     {{- if eq .Values.ingress.hostname "domain-from-values.yaml.com" }}
-    - host: {{ .Values.ingress.hostname | quote }}
+    - host: {{ .Values.ingress.hostname2 | quote }}
       http:
         paths:
           {{- if .Values.ingress.extraPaths }}
