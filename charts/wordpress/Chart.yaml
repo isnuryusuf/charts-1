@@ -18,7 +18,7 @@ dependencies:
     version: 1.x.x
 description: Biznet Gio Wordpress Hosting.
 engine: gotpl
-home: https://github.com/bitnami/charts/tree/master/bitnami/wordpress
+home: https://biznetgio.com
 icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
 keywords:
   - application
@@ -29,10 +29,10 @@ keywords:
   - web
   - wordpress
 maintainers:
-  - email: containers@bitnami.com
+  - email: support@biznetgio.com
     name: Bitnami
 name: gio-wordpress
 sources:
   - https://github.com/bitnami/bitnami-docker-wordpress
   - https://wordpress.org/
-version: 13.0.4
+version: 13.0.5

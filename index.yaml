@@ -5,6 +5,33 @@ entries:
       category: CMS
     apiVersion: v2
     appVersion: 5.8.3
+    created: "2022-01-28T00:43:43.766066918+07:00"
+    description: Biznet Gio Wordpress Hosting.
+    digest: d32abcda047cf459c7d247dd319731e0e732d5f63370de8a1b60d6dddc58262e
+    home: https://biznetgio.com
+    icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+    keywords:
+    - application
+    - blog
+    - cms
+    - http
+    - php
+    - web
+    - wordpress
+    maintainers:
+    - email: support@biznetgio.com
+      name: Bitnami
+    name: gio-wordpress
+    sources:
+    - https://github.com/bitnami/bitnami-docker-wordpress
+    - https://wordpress.org/
+    urls:
+    - https://github.com/isnuryusuf/charts-1/releases/download/gio-wordpress-13.0.5/gio-wordpress-13.0.5.tgz
+    version: 13.0.5
+  - annotations:
+      category: CMS
+    apiVersion: v2
+    appVersion: 5.8.3
     created: "2022-01-27T11:13:05.537701788+07:00"
     description: Biznet Gio Wordpress Hosting.
     digest: 1bd9453381db6a97c741939a3ff14af0b92a78612f64a68a1a532a172e7627f5
