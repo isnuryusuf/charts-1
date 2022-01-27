@@ -20,7 +20,7 @@ spec:
   ingressClassName: {{ .Values.ingress.ingressClassName | quote }}
   {{- end }}
   rules:
-    {{- if eq .Values.ingress.hostname "change-me.com" }}{{ if not .Values.ingress.hostname2 }}
+    {{- if eq .Values.ingress.hostname "change-me.com" .Values.ingress.hostname2 "" }}
     - host: '{{ $.Release.Name }}-{{ $.Release.Namespace }}.apps.k8s.arch.biznetgio.xyz'
       http:
         paths:
