@@ -33,7 +33,7 @@ spec:
             {{- end }}
             backend: {{- include "common.ingress.backend" (dict "serviceName" (include "common.names.fullname" .) "servicePort" "http" "context" $)  | nindent 14 }}
 ##    {{- end }}
-    {{ else if .Values.ingress.hostname2 }} 
+    {{ else }} 
     - host: {{ .Values.ingress.hostname2 | quote }}
       http:
         paths:
