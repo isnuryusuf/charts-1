@@ -13,7 +13,7 @@ questions:
   subquestions:
   ##- variable: ingress.hosts[0].name
   - variable: ingress.hostname2
-    default: "domain-from.question.yaml"
+    default: "change-me.com"
     description: "Hostname to your WordPress installation"
     type: hostname
     required: true
