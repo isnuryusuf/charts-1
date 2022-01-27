@@ -131,6 +131,15 @@
             "path": "ingress/enabled"
           }
         },
+        "giodomain": {
+          "type": "string",
+          "form": true,
+          "title": "Domain",
+          "hidden": {
+            "value": false,
+            "path": "ingress/enabled"
+          }
+        },
         "tls": {
           "type": "boolean",
           "form": true,
