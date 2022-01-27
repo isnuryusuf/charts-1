@@ -57,7 +57,7 @@ spec:
     {{- end }}
   {{- if or (and .Values.ingress.tls (or (include "wordpress.ingress.certManagerRequest" .Values.ingress.annotations) .Values.ingress.selfSigned)) .Values.ingress.extraTls }}
   tls:
-    {{- if and .Values.ingress.tls (or (include "wordpress.ingress.certManagerRequest" .Values.ingress.annotations) .Values.ingress.selfSigned) .Values.ingress.hostname "change-me.com") }}
+    {{- if and .Values.ingress.tls (or (include "wordpress.ingress.certManagerRequest" .Values.ingress.annotations) .Values.ingress.selfSigned) .Values.ingress.hostname "change-me.com" }}
     - hosts:
         - {{ .Values.ingress.hostname2 | quote }}
       secretName: {{ printf "%s-tls" .Values.ingress.hostname2 }}
