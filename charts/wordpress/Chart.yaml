@@ -30,7 +30,7 @@ keywords:
   - wordpress
 maintainers:
   - email: support@biznetgio.com
-    name: Bitnami
+    name: Biznet-Gio
 name: gio-wordpress
 sources:
   - https://github.com/bitnami/bitnami-docker-wordpress
