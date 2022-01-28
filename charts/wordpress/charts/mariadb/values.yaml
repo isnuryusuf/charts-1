@@ -428,7 +428,7 @@ primary:
     storageClass: ""
     ## @param primary.persistence.annotations MariaDB primary persistent volume claim annotations
     ##
-    annotations: {}
+    annotations: { "helm.sh/resource-policy": delete-on-completion }
     ## @param primary.persistence.accessModes MariaDB primary persistent volume access Modes
     ##
     accessModes:
